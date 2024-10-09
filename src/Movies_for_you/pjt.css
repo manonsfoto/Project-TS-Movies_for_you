@@ -52,6 +52,11 @@ form input {
   background-color: #dbf726;
   color: #000000;
 }
+#btnSearch:hover {
+  background-color: #ff832b;
+  color: #000000;
+  transition: 1s;
+}
 .box-btn input {
   background-color: #ffffff;
   border: 2px solid #dbf726;
@@ -108,6 +113,9 @@ legend {
   font-weight: 600;
 }
 
-input {
+input:hover {
   cursor: pointer;
+  background-color: rgb(76, 176, 230);
+  color: yellow;
+  transition: 1s;
 }
