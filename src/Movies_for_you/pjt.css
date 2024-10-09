@@ -60,6 +60,7 @@ form input {
   flex-direction: row;
   gap: 1rem;
   justify-content: space-between;
+  padding-top: 2rem;
 }
 section {
   display: grid;
@@ -94,4 +95,19 @@ h6 {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+legend {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+input {
+  cursor: pointer;
 }

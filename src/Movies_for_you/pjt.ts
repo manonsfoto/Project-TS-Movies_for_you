@@ -114,3 +114,37 @@ btnSearch?.addEventListener("click", () => {
     showResult.innerHTML = `<h6>Film not found</h6>`;
   }
 });
+
+// !======add a film function ======
+const inputTitle = document.querySelector("#inputTitle") as HTMLInputElement;
+const inputYear = document.querySelector("#inputYear") as HTMLInputElement;
+const inputDirector = document.querySelector(
+  "#inputDirector"
+) as HTMLInputElement;
+const inputGenre = document.querySelector("#inputGenre") as HTMLInputElement;
+const inputRate = document.querySelector("#inputRate") as HTMLInputElement;
+const inputRuntime = document.querySelector(
+  "#inputRuntime"
+) as HTMLInputElement;
+const btnAdd = document.querySelector("#btnAdd") as HTMLInputElement;
+
+btnAdd.addEventListener("click", () => {
+  const title = inputTitle?.value.trim();
+  const year = inputYear?.value.trim();
+  const director = inputDirector?.value.trim();
+  const runtime = inputRuntime?.value.trim();
+  const genres = inputGenre?.value
+    .split(",")
+    .map((elt) => elt.trim())
+    .filter((elt) => elt !== "");
+  const rate = inputRate?.value.trim();
+
+  if (title && year && director && runtime && rate && genres.length > 0) {
+    const newFilmArr: Movie = [title, year, director, runtime, genres, rate];
+    movies.unshift(newFilmArr);
+    updatedList = movies;
+    renderList(updatedList);
+  } else {
+    alert("Bitte füllen Sie alle Felder aus!🚨");
+  }
+});
