@@ -21,7 +21,12 @@ const showResult = document.querySelector("#showResult") as HTMLElement;
 const renderList = (Arr: Movie[]) => {
   showResult.innerHTML = "";
   Arr?.forEach((item) => {
-    showResult.innerHTML += `<li>${item}</li>`;
+    showResult.innerHTML += `<div><h4>${item[0]}</h4>
+    <p>${item[1]}</p>
+    <b><p>${item[2]}</p></b>
+    <p>${item[3]}</p>
+    <p>${item[4]}</p>
+    <p>${item[5]}</p></div>`;
   });
 };
 renderList(movies);
@@ -96,6 +101,6 @@ btnSearch?.addEventListener("click", () => {
     updatedList = searchDirector;
     renderList(updatedList);
   } else {
-    showResult.innerHTML = `<p>Film not found</p>`;
+    showResult.innerHTML = `<h6>Film not found</h6>`;
   }
 });
